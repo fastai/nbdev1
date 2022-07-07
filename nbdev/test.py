@@ -9,6 +9,7 @@ from .export import *
 from .export import _mk_flag_re
 from .export2html import _re_notebook2script
 from fastcore.script import *
+from fastcore.parallel import *
 
 from nbconvert.preprocessors import ExecutePreprocessor
 import nbformat

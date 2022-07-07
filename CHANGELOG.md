@@ -2,6 +2,18 @@
 
 <!-- do not remove -->
 
+## 1.2.11
+
+### New Features
+
+- support py310 style union annotations ([#636](https://github.com/fastai/nbdev/pull/636)), thanks to [@seeM](https://github.com/seeM)
+
+### Bugs Squashed
+
+- fix `show_doc` for properties ([#635](https://github.com/fastai/nbdev/pull/635)), thanks to [@seeM](https://github.com/seeM)
+- `nbdev_nb2md` throws error when called in a notebook ([#381](https://github.com/fastai/nbdev/issues/381))
+
+
 ## 1.2.10
 
 ### New Features

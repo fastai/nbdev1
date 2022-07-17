@@ -36,6 +36,23 @@ nb_path: "nbs/02_showdoc.ipynb"
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>All the automatic documentation of functions and classes are generated with the <a href="/showdoc.html#show_doc"><code>show_doc</code></a> function. It displays the name, arguments, docstring along with a link to the source code on GitHub.</p>
@@ -906,10 +923,10 @@ nb_path: "nbs/02_showdoc.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">o</span><span class="p">(</span><span class="n">a</span><span class="p">:(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">int</span><span class="p">)):</span> <span class="k">return</span> <span class="n">a</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">o</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="nb">list</span><span class="o">|</span><span class="nb">int</span><span class="p">):</span> <span class="k">return</span> <span class="n">a</span>
 <span class="n">sig</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">format_param</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span><span class="n">p</span> <span class="ow">in</span> <span class="n">sig</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
-<span class="n">test_eq</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;**`a`**:`(list, int)`&#39;</span><span class="p">])</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;**`a`**:`list | int`&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -1098,7 +1115,7 @@ nb_path: "nbs/02_showdoc.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="notebook2script" class="doc_header"><code>notebook2script</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/export.py#L430" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>notebook2script</code>(<strong><code>fname</code></strong>=<em><code>None</code></em>, <strong><code>silent</code></strong>=<em><code>False</code></em>, <strong><code>to_dict</code></strong>=<em><code>False</code></em>, <strong><code>bare</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="notebook2script" class="doc_header"><code>notebook2script</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/export.py#L434" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>notebook2script</code>(<strong><code>fname</code></strong>=<em><code>None</code></em>, <strong><code>silent</code></strong>=<em><code>False</code></em>, <strong><code>to_dict</code></strong>=<em><code>False</code></em>, <strong><code>bare</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Convert notebooks matching <code>fname</code> to modules</p>
 
@@ -1129,7 +1146,7 @@ nb_path: "nbs/02_showdoc.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="md2html" class="doc_header"><code>md2html</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/showdoc.py#L426" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>md2html</code>(<strong><code>md</code></strong>)</p>
+<h4 id="md2html" class="doc_header"><code>md2html</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/showdoc.py#L423" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>md2html</code>(<strong><code>md</code></strong>)</p>
 </blockquote>
 <p>Convert markdown <code>md</code> to HTML code</p>
 
@@ -1161,7 +1178,7 @@ nb_path: "nbs/02_showdoc.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_doc_link" class="doc_header"><code>get_doc_link</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/showdoc.py#L433" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_doc_link</code>(<strong><code>func</code></strong>)</p>
+<h4 id="get_doc_link" class="doc_header"><code>get_doc_link</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/showdoc.py#L430" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_doc_link</code>(<strong><code>func</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1234,7 +1251,7 @@ nb_path: "nbs/02_showdoc.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="doc" class="doc_header"><code>doc</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/showdoc.py#L455" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>doc</code>(<strong><code>elt</code></strong>, <strong><code>show_all_docments</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
+<h4 id="doc" class="doc_header"><code>doc</code><a href="https://github.com/fastai/nbdev/tree/master/nbdev/showdoc.py#L452" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>doc</code>(<strong><code>elt</code></strong>, <strong><code>show_all_docments</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Show <a href="/showdoc.html#show_doc"><code>show_doc</code></a> info in preview window when used in a notebook</p>
 
